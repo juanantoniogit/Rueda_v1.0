@@ -2,7 +2,7 @@ extends Node
 
 var NombreRueda = null
 var numHoras = null
-var numUser = null
+var numUser = 0
 #__________________________________
 var nombreUser = null
 

@@ -2,12 +2,12 @@ extends Control
 var Configuracion = preload("res://Configuracion/Configuracion.tscn").instance()
 
 
-func _ready():
-
-	pass
+#func _ready():
+#
+#	pass
 
 #func _process(delta):
-
+#
 #	pass
 
 
