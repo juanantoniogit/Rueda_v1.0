@@ -21,9 +21,12 @@ func _on_guardar_pressed():
 	print (Global.NombreRueda)
 	pass 
 #__________________________________Numero de horas del cuadrante
-var numHoras = null
+var numHoras = 0
 func _on_N_horasDia_text_changed(new_text):
-	numHoras = new_text
+	if numHoras/100 < 1:
+			numHoras = new_text
+	else:
+		print("No has introducido un valor numerico o es muy grande")
 	pass 
 func _on_Button_pressed():
 	Global.numHoras = numHoras
@@ -31,19 +34,22 @@ func _on_Button_pressed():
 	pass 
 #__________________________________Nombre nuevo usuario
 var userName = null
-func _on_nombreUser_text_changed(new_text):
-	userName = new_text
-	pass
 func _on_NuevoUsuario_pressed():
 	$VBoxContainer/NuevoUsuario/HBoxContainer2/nombreUser.show()
 	$VBoxContainer/NuevoUsuario/HBoxContainer2/ButtonNuevoUser.show()
+	pass
+func _on_nombreUser_text_changed(new_text):
+	userName = new_text
 	pass
 func _on_ButtonNuevoUser_pressed():
 	Global.numUser += 1
 	Global.nombreUser = userName
 	print (Global.numUser)
+	var usuario = Button.new()
+	usuario.set_name(userName)
+	usuario.set_text(userName)
+	$VBoxContainer/Usuarios/HBoxContainer.add_child(usuario)
 	pass 
-
 
 
 
