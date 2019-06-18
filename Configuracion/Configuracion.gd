@@ -1,6 +1,7 @@
 extends Control
 
 onready var user = load("res://Configuracion/configuracion de usuario/Config Usuario.tscn").instance()
+onready var confiUser = load("res://Configuracion/configuracion de usuario/Config Usuario.tscn").instance()
 
 
 #func _ready():
@@ -45,11 +46,16 @@ func _on_ButtonNuevoUser_pressed():
 	Global.numUser += 1
 	Global.nombreUser = userName
 	print (Global.numUser)
+#_________Instancio un boton con el nombre del nuevo usuario	
 	var usuario = Button.new()
 	usuario.set_name(userName)
 	usuario.set_text(userName)
 	$VBoxContainer/Usuarios/HBoxContainer.add_child(usuario)
+#_________
+	print(($"/root/Configuracion/VBoxContainer/Usuarios/HBoxContainer/" + str(userName)).name)
+	
 	pass 
+
 
 
 
