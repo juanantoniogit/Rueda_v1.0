@@ -1,10 +1,11 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Configuracion/configuracion de usuario/Hora de salida/Hora de salida.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Configuracion/configuracion de usuario/Config Usuario.gd" type="Script" id=1]
 
 [node name="Config Usuario" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 1 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 margin_right = 14.0
@@ -27,54 +28,22 @@ margin_right = 95.0
 margin_bottom = 14.0
 text = "Juan"
 
-[node name="salida" type="HBoxContainer" parent="PanelContainer/HBoxContainer"]
+[node name="entrada" type="HBoxContainer" parent="PanelContainer/HBoxContainer"]
 margin_top = 18.0
 margin_right = 95.0
-margin_bottom = 38.0
-
-[node name="Salida" type="Label" parent="PanelContainer/HBoxContainer/salida"]
-margin_top = 3.0
-margin_right = 45.0
-margin_bottom = 17.0
-text = "Salida  "
-
-[node name="Hora de salida" parent="PanelContainer/HBoxContainer/salida" instance=ExtResource( 1 )]
-margin_left = 49.0
-margin_right = 61.0
-margin_bottom = 20.0
-
-[node name="Hora de salida2" parent="PanelContainer/HBoxContainer/salida" instance=ExtResource( 1 )]
-margin_left = 65.0
-margin_right = 77.0
-margin_bottom = 20.0
-
-[node name="Hora de salida3" parent="PanelContainer/HBoxContainer/salida" instance=ExtResource( 1 )]
-margin_left = 81.0
-margin_right = 93.0
-margin_bottom = 20.0
-
-[node name="entrada" type="HBoxContainer" parent="PanelContainer/HBoxContainer"]
-margin_top = 42.0
-margin_right = 95.0
-margin_bottom = 62.0
+margin_bottom = 32.0
 
 [node name="Entrada" type="Label" parent="PanelContainer/HBoxContainer/entrada"]
-margin_top = 3.0
 margin_right = 47.0
-margin_bottom = 17.0
+margin_bottom = 14.0
 text = "Entrada"
 
-[node name="Hora de entrada" parent="PanelContainer/HBoxContainer/entrada" instance=ExtResource( 1 )]
-margin_left = 51.0
-margin_right = 63.0
-margin_bottom = 20.0
-
-[node name="Hora de entrada2" parent="PanelContainer/HBoxContainer/entrada" instance=ExtResource( 1 )]
-margin_left = 67.0
-margin_right = 79.0
-margin_bottom = 20.0
-
-[node name="Hora de entrada3" parent="PanelContainer/HBoxContainer/entrada" instance=ExtResource( 1 )]
-margin_left = 83.0
+[node name="salida" type="HBoxContainer" parent="PanelContainer/HBoxContainer"]
+margin_top = 36.0
 margin_right = 95.0
-margin_bottom = 20.0
+margin_bottom = 50.0
+
+[node name="Salida" type="Label" parent="PanelContainer/HBoxContainer/salida"]
+margin_right = 45.0
+margin_bottom = 14.0
+text = "Salida  "
