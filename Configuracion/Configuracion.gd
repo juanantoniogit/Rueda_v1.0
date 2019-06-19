@@ -66,13 +66,20 @@ func _on_ButtonNuevoUser_pressed():
 	var usuario = Button.new()
 	usuario.set_name(userName)
 	usuario.set_text(userName)
-	$VBoxContainer/Usuarios/HBoxContainer.add_child(usuario)
+	$VBoxContainer/Usuarios/VBoxContainer/HBoxContainer.add_child(usuario)
+#_________Conecta el boton instanciado con la funcion usuarioPressed
+	usuario.connect("pressed", self, "usuarioPressed")
+
 #_________
-	var ruta = "/root/Configuracion/VBoxContainer/Usuarios/HBoxContainer/" + str(userName)
-	get_node(ruta).add_child(confiUser)
-	print (get_node(ruta).name)
+	
 	
 	pass 
+	
+func usuarioPressed():
+	#_________Coloca la configuracion de usuario
+	var ruta = "/root/Configuracion/VBoxContainer/Usuarios/VBoxContainer/" 
+	get_node(ruta).add_child(confiUser)
+	print ("pulsado")
 
 
 
