@@ -4,15 +4,31 @@ onready var user = load("res://Configuracion/configuracion de usuario/Config Usu
 onready var confiUser = load("res://Configuracion/configuracion de usuario/Config Usuario.tscn").instance()
 
 
-#func _ready():
-#
-#	pass
+func _ready():
+	if Global.NombreRueda == null:
+		$"VBoxContainer/NombreRueda/Necesitas poner nombre a la rueda".show()
+	else:
+		$"VBoxContainer/NombreRueda/Necesitas poner nombre a la rueda".hide()
 
-#func _process(delta):
-#
+
+func _process(delta):
+	if Global.NombreRueda == null:
+		$VBoxContainer/HorasDia.hide()
+		$VBoxContainer/NuevoUsuario.hide()
+	else:
+		$"VBoxContainer/NombreRueda/Necesitas poner nombre a la rueda".hide()
+		$VBoxContainer/HorasDia.show()
+	if Global.numHoras == null:
+		$VBoxContainer/NuevoUsuario.hide()
+	else:
+		$VBoxContainer/NuevoUsuario.show()
 #	pass
 
 #__________________________________Nombre de la rueda
+func _on_Necesitas_poner_nombre_a_la_rueda_pressed():
+	$"VBoxContainer/NombreRueda/Necesitas poner nombre a la rueda".hide()
+	pass # Replace with function body.
+
 var nombreRueda = null
 func _on_NombreRueda_text_changed(new_text):
 	nombreRueda = new_text
@@ -52,9 +68,14 @@ func _on_ButtonNuevoUser_pressed():
 	usuario.set_text(userName)
 	$VBoxContainer/Usuarios/HBoxContainer.add_child(usuario)
 #_________
-	print(($"/root/Configuracion/VBoxContainer/Usuarios/HBoxContainer/" + str(userName)).name)
+	var ruta = "/root/Configuracion/VBoxContainer/Usuarios/HBoxContainer/" + str(userName)
+	get_node(ruta).add_child(confiUser)
+	print (get_node(ruta).name)
 	
 	pass 
+
+
+
 
 
 
