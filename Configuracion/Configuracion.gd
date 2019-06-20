@@ -40,12 +40,12 @@ func _on_N_horasDia_text_changed(new_text):
 	if result == null:
 		$VBoxContainer/HorasDia/HBoxContainer/Button.hide()
 		$"VBoxContainer/HorasDia/HBoxContainer/Mensaje ERROR".show()
-		
 		print ("NO has escrito un numero")
 	else:
-		print (new_text)
+		numHoras = new_text
 		$VBoxContainer/HorasDia/HBoxContainer/Button.show()
 		$"VBoxContainer/HorasDia/HBoxContainer/Mensaje ERROR".hide()
+		print (new_text)
 	pass 
 func _on_Button_pressed():
 	Global.numHoras = numHoras
