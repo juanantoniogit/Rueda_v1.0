@@ -4,11 +4,6 @@ onready var user = load("res://Configuracion/configuracion de usuario/Config Usu
 onready var confiUser = load("res://Configuracion/configuracion de usuario/Config Usuario.tscn").instance()
 
 
-func _ready():
-	if Global.NombreRueda == null:
-		$"VBoxContainer/NombreRueda/Necesitas poner nombre a la rueda".show()
-	else:
-		$"VBoxContainer/NombreRueda/Necesitas poner nombre a la rueda".hide()
 
 
 func _process(delta):
@@ -16,7 +11,6 @@ func _process(delta):
 		$VBoxContainer/HorasDia.hide()
 		$VBoxContainer/NuevoUsuario.hide()
 	else:
-		$"VBoxContainer/NombreRueda/Necesitas poner nombre a la rueda".hide()
 		$VBoxContainer/HorasDia.show()
 	if Global.numHoras == null:
 		$VBoxContainer/NuevoUsuario.hide()
@@ -25,9 +19,7 @@ func _process(delta):
 #	pass
 
 #__________________________________Nombre de la rueda
-func _on_Necesitas_poner_nombre_a_la_rueda_pressed():
-	$"VBoxContainer/NombreRueda/Necesitas poner nombre a la rueda".hide()
-	pass # Replace with function body.
+
 
 var nombreRueda = null
 func _on_NombreRueda_text_changed(new_text):
@@ -48,6 +40,7 @@ func _on_N_horasDia_text_changed(new_text):
 	if result == null:
 		$VBoxContainer/HorasDia/HBoxContainer/Button.hide()
 		$"VBoxContainer/HorasDia/HBoxContainer/Mensaje ERROR".show()
+		
 		print ("NO has escrito un numero")
 	else:
 		print (new_text)
