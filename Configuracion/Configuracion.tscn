@@ -41,7 +41,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 269.0
+margin_right = 412.0
 margin_bottom = 38.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -58,7 +58,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 262.0
+margin_right = 405.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -76,7 +76,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 262.0
+margin_right = 405.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -161,7 +161,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 262.0
+margin_right = 405.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -180,13 +180,12 @@ align = 1
 
 [node name="HorasDia" type="PanelContainer" parent="VBoxContainer" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 42.0
-margin_right = 269.0
+margin_right = 412.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -203,7 +202,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 262.0
+margin_right = 405.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -220,7 +219,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 262.0
+margin_right = 405.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -273,8 +272,31 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button" type="Button" parent="VBoxContainer/HorasDia/HBoxContainer" index="2"]
+[node name="Mensaje ERROR" type="Label" parent="VBoxContainer/HorasDia/HBoxContainer" index="2"]
 
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 188.0
+margin_top = 5.0
+margin_right = 398.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "--¡¡No has escrito un numero!!--"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button" type="Button" parent="VBoxContainer/HorasDia/HBoxContainer" index="3"]
+
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -299,12 +321,13 @@ align = 1
 
 [node name="NuevoUsuario" type="PanelContainer" parent="VBoxContainer" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 84.0
-margin_right = 269.0
+margin_right = 412.0
 margin_bottom = 118.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -321,7 +344,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 262.0
+margin_right = 405.0
 margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -405,12 +428,13 @@ align = 1
 
 [node name="Usuarios" type="Control" parent="VBoxContainer" index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 122.0
-margin_right = 269.0
+margin_right = 412.0
 margin_bottom = 122.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

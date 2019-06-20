@@ -40,10 +40,19 @@ func _on_guardar_pressed():
 #__________________________________Numero de horas del cuadrante
 var numHoras = 0
 func _on_N_horasDia_text_changed(new_text):
-	if numHoras/100 < 1:
-			numHoras = new_text
+	#_________Expresion regular para reconocer solo numeros
+	var regex = RegEx.new()
+	regex.compile("^[0-9]+$")
+	var result = regex.search(new_text)
+	print(result)
+	if result == null:
+		$VBoxContainer/HorasDia/HBoxContainer/Button.hide()
+		$"VBoxContainer/HorasDia/HBoxContainer/Mensaje ERROR".show()
+		print ("NO has escrito un numero")
 	else:
-		print("No has introducido un valor numerico o es muy grande")
+		print (new_text)
+		$VBoxContainer/HorasDia/HBoxContainer/Button.show()
+		$"VBoxContainer/HorasDia/HBoxContainer/Mensaje ERROR".hide()
 	pass 
 func _on_Button_pressed():
 	Global.numHoras = numHoras
