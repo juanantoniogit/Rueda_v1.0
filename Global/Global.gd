@@ -33,4 +33,39 @@ var usuario ={
 	}
 #__________________________________
 
-
+var Usuarios = {}
+var LunesEntrada = {}
+var LunesSalida = {}
+var MartesEntrada = {}
+var MartesSalida = {}
+var MiercolesEntrada = {}
+var MiercolesSalida = {}
+var JuevesEntrada = {}
+var JuevesSalida = {}
+var ViernesEntrada = {}
+var ViernesSalida = {}
+#__________________________________Añade usuarios al diccionario Usuarios
+func CrearUser():
+	Usuarios[nombreUser] = numUser
+	print (Usuarios)
+	pass
+#__________________________________Pone la hora de entrada del lunes al usuario
+func llenaLunesEntrada():
+	LunesEntrada[nombreUser] = entradaL
+	print (LunesEntrada)
+	pass
+#__________________________________Pone la hora de salida del lunes al usuario
+func llenaLunesSalida():
+	LunesSalida[nombreUser] = salidaL
+	print (LunesSalida)
+	pass
+#__________________________________Pone la hora de entrada del Martes al usuario
+func llenaMartesEntrada():
+	MartesEntrada[nombreUser] = entradaM
+	print (MartesEntrada)
+	pass
+#__________________________________Pone la hora de salida del Martes al usuario
+func llenaMartesSalida():
+	MartesSalida[nombreUser] = salidaM
+	print (MartesSalida)
+	pass

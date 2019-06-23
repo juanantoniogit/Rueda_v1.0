@@ -14,23 +14,23 @@ margin_bottom = 14.0
 [node name="Panel" type="Panel" parent="PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 102.0
-margin_bottom = 69.0
+margin_right = 54.0
+margin_bottom = 57.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 102.0
-margin_bottom = 69.0
+margin_right = 54.0
+margin_bottom = 57.0
 
 [node name="Nombre" type="Label" parent="PanelContainer/HBoxContainer"]
-margin_right = 95.0
+margin_right = 47.0
 margin_bottom = 14.0
 text = "Juan"
 
 [node name="entrada" type="HBoxContainer" parent="PanelContainer/HBoxContainer"]
 margin_top = 18.0
-margin_right = 95.0
+margin_right = 47.0
 margin_bottom = 32.0
 
 [node name="Entrada" type="Label" parent="PanelContainer/HBoxContainer/entrada"]
@@ -40,7 +40,7 @@ text = "Entrada"
 
 [node name="salida" type="HBoxContainer" parent="PanelContainer/HBoxContainer"]
 margin_top = 36.0
-margin_right = 95.0
+margin_right = 47.0
 margin_bottom = 50.0
 
 [node name="Salida" type="Label" parent="PanelContainer/HBoxContainer/salida"]
