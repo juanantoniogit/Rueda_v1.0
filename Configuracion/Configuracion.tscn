@@ -118,7 +118,29 @@ margin_left = 7.0
 margin_top = 7.0
 margin_right = 262.0
 margin_bottom = 21.0
-text = "--¡¡No has escrito un numero!!--"
+text = "--¡¡Se necesita un numero entero!!!--"
+
+[node name="LimiteHoras" type="PanelContainer" parent="VBoxContainer"]
+editor/display_folded = true
+visible = false
+margin_top = 122.0
+margin_right = 269.0
+margin_bottom = 167.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/LimiteHoras"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 262.0
+margin_bottom = 38.0
+
+[node name="Mensaje ERROR" type="Label" parent="VBoxContainer/LimiteHoras"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 262.0
+margin_bottom = 38.0
+text = "--¡¡No puede haber mas de 24 horas al dia!!--"
+autowrap = true
+percent_visible = -0.027027
 
 [node name="NuevoUsuario" type="PanelContainer" parent="VBoxContainer"]
 editor/display_folded = true

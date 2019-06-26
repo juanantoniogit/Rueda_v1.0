@@ -5,6 +5,7 @@ var numHoras = null
 var numUser = 0
 #__________________________________
 var nombreUser = null
+var rutaBoton = null
 
 var entradaL = null
 var entradaM = null
@@ -44,6 +45,12 @@ var JuevesEntrada = {}
 var JuevesSalida = {}
 var ViernesEntrada = {}
 var ViernesSalida = {}
+var nombreBotonUser = {}
+#__________________________________Añade usuarios al diccionario Usuarios
+func nombreBotonUser():
+	nombreBotonUser[rutaBoton] = nombreUser
+	print(nombreBotonUser)
+	pass 
 #__________________________________Añade usuarios al diccionario Usuarios
 func CrearUser():
 	Usuarios[nombreUser] = numUser
@@ -52,20 +59,20 @@ func CrearUser():
 #__________________________________Pone la hora de entrada del lunes al usuario
 func llenaLunesEntrada():
 	LunesEntrada[nombreUser] = entradaL
-	print (LunesEntrada)
+#	print (LunesEntrada)
 	pass
 #__________________________________Pone la hora de salida del lunes al usuario
 func llenaLunesSalida():
 	LunesSalida[nombreUser] = salidaL
-	print (LunesSalida)
+#	print (LunesSalida)
 	pass
 #__________________________________Pone la hora de entrada del Martes al usuario
 func llenaMartesEntrada():
 	MartesEntrada[nombreUser] = entradaM
-	print (MartesEntrada)
+#	print (MartesEntrada)
 	pass
 #__________________________________Pone la hora de salida del Martes al usuario
 func llenaMartesSalida():
 	MartesSalida[nombreUser] = salidaM
-	print (MartesSalida)
+#	print (MartesSalida)
 	pass
