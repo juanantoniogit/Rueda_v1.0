@@ -1,9 +1,8 @@
 extends Control
 
-onready var user = load("res://Configuracion/configuracion de usuario/Config Usuario.tscn").instance()
 onready var confiUser = load("res://Configuracion/configuracion de usuario/Config Usuario.tscn")
 onready var MenuPrincipal = load("res://Menu principal/MenuPincipal.tscn").instance()
-
+onready var BotonUsuario = load("res://Configuracion/Boton de usuario/Boton de usuario.tscn")
 
 
 
@@ -31,7 +30,6 @@ func _on_NombreRueda_text_changed(new_text):
 	pass
 func _on_guardar_pressed():
 	Global.NombreRueda = nombreRueda
-#	print (Global.NombreRueda)
 	pass 
 #__________________________________Numero de horas del cuadrante
 var numHoras = 0
@@ -40,7 +38,6 @@ func _on_N_horasDia_text_changed(new_text):
 	var regex = RegEx.new()
 	regex.compile("^[0-9]+$")
 	var result = regex.search(new_text)
-#	print(result)
 	if result == null:
 		$"VBoxContainer/Error ".show()
 #		print ("NO has escrito un numero")
@@ -48,7 +45,6 @@ func _on_N_horasDia_text_changed(new_text):
 		numHoras = new_text
 		$"VBoxContainer/Error ".hide()
 		limiteHoras()
-#		print (new_text)
 	pass 
 func limiteHoras():
 	if int(numHoras) > 24:
@@ -81,42 +77,21 @@ func _on_GuardarNuevoUser_pressed():
 	espacio.set_name("ContenedorUser-" + str(Global.numUser))
 	var contenedorUsers = "VBoxContainer/Usuarios/VBoxContainer/HBoxContainer/"
 	get_node(contenedorUsers).add_child(espacio)
-	#_________Instancio un boton con el nombre del nuevo usuario	
-	var usuario = Button.new()
-	usuario.set_name(userName)
-	usuario.set_text(userName)
+	#_________Instancio la escena del boton de usuario con el nombre del nuevo usuario	
 	var nombreEspacio = espacio.get_name()
-	get_node(str(contenedorUsers) + str(nombreEspacio)).add_child(usuario)
+	var nuevoBotonUser = BotonUsuario.instance()
+	get_node(str(contenedorUsers) + str(nombreEspacio)).add_child(nuevoBotonUser)
+	var botonUser = get_node(str(contenedorUsers) + str(nombreEspacio) + "/Boton de usuario/Button" )
+	botonUser.set_text(userName)
+	botonUser.set_name(userName)
 	#_________Instancia la configuracion de usuario en cada usuario
-	var nuevoBoton = (str(contenedorUsers) + str(nombreEspacio) + "/" + str(usuario.name))
 	var nuevaConfigUser = confiUser.instance()
 	get_node(str(contenedorUsers) + str(nombreEspacio)).add_child(nuevaConfigUser)
-#	get_node(str(contenedorUsers) + str(nombreEspacio) + "/Config Usuario").hide()
+	get_node(str(contenedorUsers) + str(nombreEspacio) + "/" + str(nuevaConfigUser.name)).hide()
+	
 	#_________Almacena el usuario en el Global
 	Global.CrearUser()
-	var conectarUserFuncion = "conectarBoton" + str(userName)
-		
-	
-	#_________Conecta el boton instanciado con la funcion usuarioPressed
-	usuario.connect("pressed", self, conectarUserFuncion)
-	
 	pass 
-
-
-#__________________________________Conecta el boton del usuario con la configuracion del mismo
-#signal conectBotonConfigUser 
-func conectarBotona():
-#	get_node(str(contenedorUsers) + str(nombreEspacio) + "/Config Usuario").show()
-#	print(.name)
-#	print(get_parent().get_node("Config Usuario"))
-#	print()
-#	print (userName)
-#	emit_signal("conectBotonConfigUser")
-#	print(get_node("VBoxContainer/Usuarios/VBoxContainer/HBoxContainer").get_children())
-#	var ruta = "/root/Configuracion/VBoxContainer/Usuarios/VBoxContainer/HBoxContainer" 
-#	get_node(ruta).add_child(confiUser)
-	print ("pulsado por: " +str(userName))
-
 
 
 

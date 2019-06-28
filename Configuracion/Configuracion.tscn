@@ -140,7 +140,6 @@ margin_right = 262.0
 margin_bottom = 38.0
 text = "--¡¡No puede haber mas de 24 horas al dia!!--"
 autowrap = true
-percent_visible = -0.027027
 
 [node name="NuevoUsuario" type="PanelContainer" parent="VBoxContainer"]
 editor/display_folded = true
