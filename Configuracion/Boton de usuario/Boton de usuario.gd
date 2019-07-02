@@ -4,8 +4,8 @@ onready var boton = $Button
 
 func _on_Button_pressed():
 	get_parent().get_node("Config Usuario").show()
-	print(boton.name)
-	print(Global.Usuarios[boton.name])
+	print("Nombre boton: " + str(boton.name))
+	print("Nº de usuario: " + str(Global.Usuarios[boton.name]))
 	
 	pass
 

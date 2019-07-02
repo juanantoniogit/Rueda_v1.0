@@ -35,6 +35,7 @@ var usuario ={
 #__________________________________
 
 var Usuarios = {}
+var UserNombre = {}
 var LunesEntrada = {}
 var LunesSalida = {}
 var MartesEntrada = {}
@@ -54,6 +55,7 @@ func nombreBotonUser():
 #__________________________________Añade usuarios al diccionario Usuarios
 func CrearUser():
 	Usuarios[nombreUser] = numUser
+	UserNombre[numUser] = nombreUser
 	print (Usuarios)
 	pass
 #__________________________________Pone la hora de entrada del lunes al usuario
@@ -76,3 +78,5 @@ func llenaMartesSalida():
 	MartesSalida[nombreUser] = salidaM
 #	print (MartesSalida)
 	pass
+
+	

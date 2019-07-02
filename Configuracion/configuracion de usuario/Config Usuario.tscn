@@ -14,72 +14,69 @@ margin_bottom = 14.0
 [node name="Panel" type="Panel" parent="PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 381.0
-margin_bottom = 116.0
-
-[node name="Panel2" type="Panel" parent="PanelContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 381.0
-margin_bottom = 116.0
+margin_right = 391.0
+margin_bottom = 130.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 381.0
-margin_bottom = 116.0
+margin_right = 391.0
+margin_bottom = 130.0
 
 [node name="Nombre" type="Label" parent="PanelContainer/HBoxContainer"]
-margin_right = 374.0
+margin_right = 384.0
 margin_bottom = 14.0
 text = "Juan"
-
-[node name="Guardar" type="Button" parent="PanelContainer/HBoxContainer"]
-margin_top = 18.0
-margin_right = 374.0
-margin_bottom = 38.0
-text = "Guardar"
+align = 1
 
 [node name="semana" type="HBoxContainer" parent="PanelContainer/HBoxContainer"]
-margin_top = 42.0
-margin_right = 374.0
-margin_bottom = 109.0
+margin_top = 18.0
+margin_right = 384.0
+margin_bottom = 99.0
 
-[node name="etiquetas" type="VBoxContainer" parent="PanelContainer/HBoxContainer/semana"]
+[node name="etiquetas" type="PanelContainer" parent="PanelContainer/HBoxContainer/semana"]
 editor/display_folded = true
-margin_right = 47.0
-margin_bottom = 67.0
+margin_right = 61.0
+margin_bottom = 81.0
 
-[node name="espacio" type="Label" parent="PanelContainer/HBoxContainer/semana/etiquetas"]
+[node name="etiquetas" type="VBoxContainer" parent="PanelContainer/HBoxContainer/semana/etiquetas"]
+editor/display_folded = true
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 54.0
+margin_bottom = 74.0
+
+[node name="espacio" type="Label" parent="PanelContainer/HBoxContainer/semana/etiquetas/etiquetas"]
 margin_right = 47.0
 margin_bottom = 31.0
 text = "
 "
 
-[node name="Entrada" type="Label" parent="PanelContainer/HBoxContainer/semana/etiquetas"]
+[node name="Entrada" type="Label" parent="PanelContainer/HBoxContainer/semana/etiquetas/etiquetas"]
 margin_top = 35.0
 margin_right = 47.0
 margin_bottom = 49.0
 text = "Entrada"
+valign = 1
 
-[node name="Salida" type="Label" parent="PanelContainer/HBoxContainer/semana/etiquetas"]
+[node name="Salida" type="Label" parent="PanelContainer/HBoxContainer/semana/etiquetas/etiquetas"]
 margin_top = 53.0
 margin_right = 47.0
 margin_bottom = 67.0
 text = "Salida  "
+valign = 2
 
 [node name="lunes" type="PanelContainer" parent="PanelContainer/HBoxContainer/semana"]
 editor/display_folded = true
-margin_left = 51.0
-margin_right = 100.0
-margin_bottom = 67.0
+margin_left = 65.0
+margin_right = 114.0
+margin_bottom = 81.0
 
 [node name="lunes" type="VBoxContainer" parent="PanelContainer/HBoxContainer/semana/lunes"]
-editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 42.0
-margin_bottom = 60.0
+margin_bottom = 74.0
 
 [node name="lunes" type="Label" parent="PanelContainer/HBoxContainer/semana/lunes/lunes"]
 margin_right = 35.0
@@ -99,16 +96,16 @@ margin_bottom = 39.0
 
 [node name="martes" type="PanelContainer" parent="PanelContainer/HBoxContainer/semana"]
 editor/display_folded = true
-margin_left = 104.0
-margin_right = 163.0
-margin_bottom = 67.0
+margin_left = 118.0
+margin_right = 177.0
+margin_bottom = 81.0
 
 [node name="martes" type="VBoxContainer" parent="PanelContainer/HBoxContainer/semana/martes"]
 editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 52.0
-margin_bottom = 60.0
+margin_bottom = 74.0
 
 [node name="martes" type="Label" parent="PanelContainer/HBoxContainer/semana/martes/martes"]
 margin_right = 45.0
@@ -128,16 +125,16 @@ margin_bottom = 39.0
 
 [node name="miercoles" type="PanelContainer" parent="PanelContainer/HBoxContainer/semana"]
 editor/display_folded = true
-margin_left = 167.0
-margin_right = 245.0
-margin_bottom = 67.0
+margin_left = 181.0
+margin_right = 259.0
+margin_bottom = 81.0
 
 [node name="miercoles" type="VBoxContainer" parent="PanelContainer/HBoxContainer/semana/miercoles"]
 editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 71.0
-margin_bottom = 60.0
+margin_bottom = 74.0
 
 [node name="miercoles" type="Label" parent="PanelContainer/HBoxContainer/semana/miercoles/miercoles"]
 margin_right = 64.0
@@ -157,16 +154,16 @@ margin_bottom = 39.0
 
 [node name="jueves" type="PanelContainer" parent="PanelContainer/HBoxContainer/semana"]
 editor/display_folded = true
-margin_left = 249.0
-margin_right = 305.0
-margin_bottom = 67.0
+margin_left = 263.0
+margin_right = 319.0
+margin_bottom = 81.0
 
 [node name="jueves" type="VBoxContainer" parent="PanelContainer/HBoxContainer/semana/jueves"]
 editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 49.0
-margin_bottom = 60.0
+margin_bottom = 74.0
 
 [node name="jueves" type="Label" parent="PanelContainer/HBoxContainer/semana/jueves/jueves"]
 margin_right = 42.0
@@ -186,16 +183,16 @@ margin_bottom = 39.0
 
 [node name="viernes" type="PanelContainer" parent="PanelContainer/HBoxContainer/semana"]
 editor/display_folded = true
-margin_left = 309.0
-margin_right = 370.0
-margin_bottom = 67.0
+margin_left = 323.0
+margin_right = 384.0
+margin_bottom = 81.0
 
 [node name="viernes" type="VBoxContainer" parent="PanelContainer/HBoxContainer/semana/viernes"]
 editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 54.0
-margin_bottom = 60.0
+margin_bottom = 74.0
 
 [node name="viernes" type="Label" parent="PanelContainer/HBoxContainer/semana/viernes/viernes"]
 margin_right = 47.0
@@ -212,4 +209,10 @@ margin_bottom = 35.0
 margin_top = 39.0
 margin_right = 47.0
 margin_bottom = 39.0
+
+[node name="Guardar" type="Button" parent="PanelContainer/HBoxContainer"]
+margin_top = 103.0
+margin_right = 384.0
+margin_bottom = 123.0
+text = "Guardar"
 [connection signal="pressed" from="PanelContainer/HBoxContainer/Guardar" to="." method="_on_Guardar_pressed"]
