@@ -8,8 +8,8 @@ var diasSemana = ["ColHorario", "Lunes", "Martes", "Miercoles", "Jueves", "Viern
 
 func _ready():
 	numHoras()
-func _process(delta):
-	llenaTablaConUser()
+#func _process(delta):
+#	llenaTablaConUser()
 
 	
 #______________________Crea la tabla en funcion del nº de horas
@@ -32,5 +32,6 @@ func ponUserEnHora(hora):
 	newUser.get_node(label).set_text("Usuarios")
 	newUser.get_node(coche).hide()
 func llenaTablaConUser():
+	print ("llena tabla")
 	for i in len(Global.Usuarios):
 		print (Global.LunesEntrada[Global.UserNombre[i+1]])
