@@ -3,27 +3,22 @@ extends Control
 onready var confiUser = load("res://Configuracion/configuracion de usuario/Config Usuario.tscn")
 onready var MenuPrincipal = load("res://Menu principal/MenuPincipal.tscn").instance()
 onready var BotonUsuario = load("res://Configuracion/Boton de usuario/Boton de usuario.tscn")
-
+onready var Cuadrante = load("res://Cuadrante/Cuadrante.tscn").instance()
 
 
 func _process(delta):
 	if Global.NombreRueda == null:
-		$VBoxContainer/HorasDia.hide()
-		$VBoxContainer/NuevoUsuario.hide()
+		$Config/VBoxContainer/HorasDia.hide()
+		$Config/VBoxContainer/NuevoUsuario.hide()
 	else:
-		$VBoxContainer/HorasDia.show()
+		$Config/VBoxContainer/HorasDia.show()
 	if Global.numHoras == null:
-		$VBoxContainer/NuevoUsuario.hide()
+		$Config/VBoxContainer/NuevoUsuario.hide()
 	else:
-		$VBoxContainer/NuevoUsuario.show()
-	NumUser()
+		$Config/VBoxContainer/NuevoUsuario.show()
 	verGuardar()
+	NumUser()
 	ExistName()
-#	print("nº user en dic: " + str(len(Global.Usuarios)))
-#	print("numUser: " + str((Global.numUser)))
-	
-
-		
 	pass
 
 #__________________________________Volver al menu principal
@@ -41,9 +36,9 @@ func verGuardar():
 	#_________si no hay nombre no se ve el boton de guardar.
 	#_________Esta corriendo en func process
 	if nombreRueda == null:
-		$"VBoxContainer/NombreRueda/HBoxContainer/guardar".hide()
+		$"Config/VBoxContainer/NombreRueda/HBoxContainer/guardar".hide()
 	else:
-		$"VBoxContainer/NombreRueda/HBoxContainer/guardar".show()
+		$"Config/VBoxContainer/NombreRueda/HBoxContainer/guardar".show()
 	pass
 func _on_guardar_pressed():
 	Global.NombreRueda = nombreRueda
@@ -56,32 +51,33 @@ func _on_N_horasDia_text_changed(new_text):
 	regex.compile("^[0-9]+$")
 	var result = regex.search(new_text)
 	if result == null:
-		$"VBoxContainer/Error".show()
-		$"VBoxContainer/HorasDia/HBoxContainer/ButtonHorasDia".hide()
+		$"Config/VBoxContainer/Error".show()
+		$"Config/VBoxContainer/HorasDia/HBoxContainer/ButtonHorasDia".hide()
 #		print ("NO has escrito un numero")
 	else:
 		numHoras = new_text
-		$"VBoxContainer/Error".hide()
-		$"VBoxContainer/HorasDia/HBoxContainer/ButtonHorasDia".show()
+		$"Config/VBoxContainer/Error".hide()
+		$"Config/VBoxContainer/HorasDia/HBoxContainer/ButtonHorasDia".show()
 		limiteHoras()
 	pass 
 func limiteHoras():
 	if int(numHoras) > 24:
-		$VBoxContainer/LimiteHoras.show()
-		$VBoxContainer/HorasDia/HBoxContainer/ButtonHorasDia.hide()
+		$Config/VBoxContainer/LimiteHoras.show()
+		$Config/VBoxContainer/HorasDia/HBoxContainer/ButtonHorasDia.hide()
 	else:
-		$VBoxContainer/LimiteHoras.hide()
-		$VBoxContainer/HorasDia/HBoxContainer/ButtonHorasDia.show()
+		$Config/VBoxContainer/LimiteHoras.hide()
+		$Config/VBoxContainer/HorasDia/HBoxContainer/ButtonHorasDia.show()
 		pass
 	pass
 func _on_ButtonHorasDia_pressed():
 	Global.numHoras = numHoras
+	get_node("Config").add_child(Cuadrante)
 #	print (Global.numHoras)
 	pass 
 #__________________________________Numero de usuarios
 func NumUser():
-	var numUser = "Numero de usuarios: " + str(Global.numUser)
-	$VBoxContainer/NumUsuarios/NumeroUsuarios.set_text(numUser)
+	var numUser = "Numero de usuarios: " + str(len(Global.Usuarios))
+	$Config/VBoxContainer/NumUsuarios/NumeroUsuarios.set_text(numUser)
 	pass 
 #__________________________________Nombre nuevo usuario
 var userName = null
@@ -90,43 +86,33 @@ var userName = null
 #	$VBoxContainer/NuevoUsuario/HBoxContainer2/GuardarNuevoUser.show()
 #	pass
 func _on_nombreUser_text_changed(new_text):
-	userName = new_text
-
-
-	
+	userName = new_text	
+	#__________Comprueba que el nuevo nombre no exista.
 func ExistName():
 	#__________se activa en func proces
-	for i in range(Global.numUser):
-#		print ("i: " + str(i+1))
-#		print ("NumUser:" + str(Global.numUser))
-#		print(Global.Usuarios)
-#		print("Nombre usuario: " + str(Global.UserNombre[i+1]))
+	for i in range(len(Global.Usuarios)):
 		if str(Global.UserNombre[i+1]) == userName:
-			print ("el nombre ya existe")
-			print ("falta que hacer ahora NO ESTAS BIEN")
-			$"VBoxContainer/Error/Mensaje ERROR".set_text("El nombre ya existe")
-			$"VBoxContainer/NuevoUsuario/HBoxContainer2/GuardarNuevoUser".hide()
-			$"VBoxContainer/Error".show()
+#			print ("el nombre ya existe")
+			$"Config/VBoxContainer/Error/Mensaje ERROR".set_text("El nombre ya existe")
+			$"Config/VBoxContainer/NuevoUsuario/HBoxContainer2/GuardarNuevoUser".hide()
+			$"Config/VBoxContainer/Error".show()
+			return
 		else:
-			$"VBoxContainer/NuevoUsuario/HBoxContainer2/GuardarNuevoUser".show()
-			$"VBoxContainer/Error".hide()
-			print("nuevo usuario guardado")
+#			print("nuevo usuario guardado")
+			$"Config/VBoxContainer/NuevoUsuario/HBoxContainer2/GuardarNuevoUser".show()
+			$"Config/VBoxContainer/Error".hide()
 			Global.CrearUser()
-			print(Global.Usuarios)
+#			print(Global.Usuarios)
 	pass
 func _on_GuardarNuevoUser_pressed():
-	
-	print(Global.Usuarios)
-	
-#	if (len(Global.Usuarios) == Global.numUser):
-	
+#	print(Global.Usuarios)
 	Global.numUser += 1
 	Global.nombreUser = userName
 	Global.CrearUser()
 #_________coloca un VBox a cada usuario creado para organizar el espacio	
 	var espacio = VBoxContainer.new()
 	espacio.set_name("ContenedorUser-" + str(Global.numUser))
-	var contenedorUsers = "VBoxContainer/Usuarios/VBoxContainer/HBoxContainer/"
+	var contenedorUsers = "Config/VBoxContainer/Usuarios/VBoxContainer/HBoxContainer/"
 	get_node(contenedorUsers).add_child(espacio)
 #_________Instancio la escena del boton de usuario con el nombre del nuevo usuario	
 	var nombreEspacio = espacio.get_name()
@@ -139,16 +125,8 @@ func _on_GuardarNuevoUser_pressed():
 	var nuevaConfigUser = confiUser.instance()
 	get_node(str(contenedorUsers) + str(nombreEspacio)).add_child(nuevaConfigUser)
 	get_node(str(contenedorUsers) + str(nombreEspacio) + "/" + str(nuevaConfigUser.name)).hide()
-	
-	#_________Almacena el usuario en el Global
-	
-#	usuarioSelec()
 	pass 
-#func usuarioSelec():
-#	print (get_parent().name)
-##	print (get_parent().get_children())
-#	print (len(Global.Usuarios))
-##	get_parent().get_node("Config Usuario").show()
+
 
 
 

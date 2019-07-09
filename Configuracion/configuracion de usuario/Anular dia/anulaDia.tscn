@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Configuracion/configuracion de usuario/Anular dia/anulaDia.gd" type="Script" id=1]
+
+[node name="anulaDia" type="Button"]
+margin_top = 35.0
+margin_right = 76.0
+margin_bottom = 55.0
+text = "Anular dia"
+script = ExtResource( 1 )
+[connection signal="pressed" from="." to="." method="_on_anulaDia_pressed"]

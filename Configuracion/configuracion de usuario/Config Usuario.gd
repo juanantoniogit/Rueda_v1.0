@@ -49,6 +49,18 @@ func horaEntradaSelect(i, dia):
 			var horasDia = "PanelContainer/HBoxContainer/semana/" + str(dia) + "/" + str(dia) + "/entrada/" + str(i+1)
 			get_node(horasDia).set_pressed(false)
 			get_node(botonPulsado).set_pressed(true)
+			Global.nombreUser = get_parent().get_node("Boton de usuario").get_child(0).name
+			if dia == lunes:
+				Global.entradaL = get_node(botonPulsado).name
+			if dia == martes:
+				Global.entradaM = get_node(botonPulsado).name
+			if dia == miercoles:
+				Global.entradaX = get_node(botonPulsado).name
+			if dia == jueves:
+				Global.entradaJ = get_node(botonPulsado).name
+			if dia == viernes:
+				Global.entradaV = get_node(botonPulsado).name
+		
 	pass
 #__________________________________Establece el nº de botones segun nº horas salida
 func horasSalida(dia):
@@ -63,21 +75,39 @@ func horasSalida(dia):
 		BotonSalida.connect("pressed", self, "horaSalidaSelect",[i+1,dia])
 	pass
 	#_________marca la ultima hora seleccionada de cada dia a la salida
+var horasSelecSalida = {lunes = null, martes = null, miercoles = null, jueves = null, viernes = null}
 func horaSalidaSelect(i, dia):
-	print ("horaSalida" + str(i) + str(dia))
+#	print ("horaSalida: " + str(i) + ", " + str(dia))
 	var botonPulsado = "PanelContainer/HBoxContainer/semana/" + str(dia) + "/" + str(dia) + "/salida/" +str(i)
 	if get_node(botonPulsado).is_pressed():
 		for i in range (horas):
 			var horasDia = "PanelContainer/HBoxContainer/semana/" + str(dia) + "/" + str(dia) + "/salida/" + str(i+1)
 			get_node(horasDia).set_pressed(false)
 			get_node(botonPulsado).set_pressed(true)
+			Global.nombreUser = get_parent().get_node("Boton de usuario").get_child(0).name
+			if dia == lunes:
+				Global.salidaL = get_node(botonPulsado).name
+			if dia == martes:
+				Global.salidaM = get_node(botonPulsado).name
+			if dia == miercoles:
+				Global.salidaX = get_node(botonPulsado).name
+			if dia == jueves:
+				Global.salidaJ = get_node(botonPulsado).name
+			if dia == viernes:
+				Global.salidaV = get_node(botonPulsado).name
+			
 	pass
 	#_________guarda las horas y dias seleccionados en cada usuario
 func _on_Guardar_pressed():
-	
 	$".".hide()
+	Global.llenaLunesEntrada(Global.nombreUser , Global.entradaL)
+	Global.llenaLunesSalida(Global.nombreUser , Global.salidaL)
+	Global.llenaMartesEntrada(Global.nombreUser , Global.entradaM)
+	Global.llenaMartesSalida(Global.nombreUser , Global.salidaM)
+	Global.llenaMiercolesEntrada(Global.nombreUser , Global.entradaX)
+	Global.llenaMiercolesSalida(Global.nombreUser , Global.salidaX)
+	Global.llenaJuevesEntrada(Global.nombreUser , Global.entradaJ)
+	Global.llenaJuevesSalida(Global.nombreUser , Global.salidaJ)
+	Global.llenaViernesEntrada(Global.nombreUser , Global.entradaV)
+	Global.llenaViernesSalida(Global.nombreUser , Global.salidaV)
 	pass 
-
-
-
-

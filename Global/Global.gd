@@ -56,27 +56,57 @@ func nombreBotonUser():
 func CrearUser():
 	Usuarios[nombreUser] = numUser
 	UserNombre[numUser] = nombreUser
-	print (Usuarios)
+#	print ("func Global.CrearUser" + str(Usuarios))
 	pass
 #__________________________________Pone la hora de entrada del lunes al usuario
-func llenaLunesEntrada():
+func llenaLunesEntrada(nombreUser, entradaL):
 	LunesEntrada[nombreUser] = entradaL
-#	print (LunesEntrada)
+	print ("DiccLunesEntrada: " + str(LunesEntrada))
 	pass
 #__________________________________Pone la hora de salida del lunes al usuario
-func llenaLunesSalida():
+func llenaLunesSalida(nombreUser , salidaL):
 	LunesSalida[nombreUser] = salidaL
-#	print (LunesSalida)
+	print ("DiccLunesSalida: " + str(LunesSalida))
 	pass
 #__________________________________Pone la hora de entrada del Martes al usuario
-func llenaMartesEntrada():
+func llenaMartesEntrada(nombreUser , entradaM):
 	MartesEntrada[nombreUser] = entradaM
-#	print (MartesEntrada)
+	print ("DiccMartesEntrada: " + str(MartesEntrada))
 	pass
 #__________________________________Pone la hora de salida del Martes al usuario
-func llenaMartesSalida():
+func llenaMartesSalida(nombreUser , salidaM):
 	MartesSalida[nombreUser] = salidaM
-#	print (MartesSalida)
+	print ("DiccMartesSalida: " + str(MartesSalida))
+	pass
+#__________________________________Pone la hora de entrada del Miercoles al usuario
+func llenaMiercolesEntrada(nombreUser , entradaX):
+	MiercolesEntrada[nombreUser] = entradaX
+	print ("DiccMiercolesEntrada: " + str(MiercolesEntrada))
+	pass
+#__________________________________Pone la hora de salida del Miercoles al usuario
+func llenaMiercolesSalida(nombreUser , salidaX):
+	MiercolesSalida[nombreUser] = salidaX
+	print ("DiccMiercolesSalida: " + str(MiercolesSalida))
+	pass
+#__________________________________Pone la hora de entrada del Jueves al usuario
+func llenaJuevesEntrada(nombreUser , entradaJ):
+	JuevesEntrada[nombreUser] = entradaJ
+	print ("DiccJuevesEntrada: " + str(JuevesEntrada))
+	pass
+#__________________________________Pone la hora de salida del Jueves al usuario
+func llenaJuevesSalida(nombreUser , salidaJ):
+	JuevesSalida[nombreUser] = salidaJ
+	print ("DiccJuevesSalida: " + str(JuevesSalida))
+	pass
+#__________________________________Pone la hora de entrada del Viernes al usuario
+func llenaViernesEntrada(nombreUser , entradaV):
+	ViernesEntrada[nombreUser] = entradaV
+	print ("DiccViernesEntrada: " + str(ViernesEntrada))
+	pass
+#__________________________________Pone la hora de salida del Viernes al usuario
+func llenaViernesSalida(nombreUser , salidaV):
+	ViernesSalida[nombreUser] = salidaV
+	print ("DiccViernesSalida: " + str(ViernesSalida))
 	pass
 
 	

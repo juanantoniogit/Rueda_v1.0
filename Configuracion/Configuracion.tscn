@@ -7,112 +7,121 @@ margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Config" type="HBoxContainer" parent="."]
+margin_top = 5.0
+margin_right = 250.0
+margin_bottom = 396.0
 
-[node name="PanelMenuPrincipal" type="PanelContainer" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Config"]
 editor/display_folded = true
-margin_right = 247.0
+margin_right = 246.0
+margin_bottom = 391.0
+
+[node name="PanelMenuPrincipal" type="PanelContainer" parent="Config/VBoxContainer"]
+editor/display_folded = true
+margin_right = 246.0
 margin_bottom = 34.0
 
-[node name="PanelMenuPrincipal" type="Panel" parent="VBoxContainer/PanelMenuPrincipal"]
+[node name="PanelMenuPrincipal" type="Panel" parent="Config/VBoxContainer/PanelMenuPrincipal"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 240.0
+margin_right = 239.0
 margin_bottom = 27.0
 
-[node name="ButtonMenuprincipal" type="Button" parent="VBoxContainer/PanelMenuPrincipal"]
+[node name="ButtonMenuprincipal" type="Button" parent="Config/VBoxContainer/PanelMenuPrincipal"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 240.0
+margin_right = 239.0
 margin_bottom = 27.0
 text = "Menu Principal"
 
-[node name="NombreRueda" type="PanelContainer" parent="VBoxContainer"]
+[node name="NombreRueda" type="PanelContainer" parent="Config/VBoxContainer"]
 editor/display_folded = true
 margin_top = 38.0
-margin_right = 247.0
+margin_right = 246.0
 margin_bottom = 76.0
 
-[node name="Panel" type="Panel" parent="VBoxContainer/NombreRueda"]
+[node name="Panel" type="Panel" parent="Config/VBoxContainer/NombreRueda"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 240.0
+margin_right = 239.0
 margin_bottom = 31.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/NombreRueda"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Config/VBoxContainer/NombreRueda"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 240.0
+margin_right = 239.0
 margin_bottom = 31.0
 
-[node name="NombreRueda" type="LineEdit" parent="VBoxContainer/NombreRueda/HBoxContainer"]
+[node name="NombreRueda" type="LineEdit" parent="Config/VBoxContainer/NombreRueda/HBoxContainer"]
 margin_right = 58.0
 margin_bottom = 24.0
 
-[node name="Label" type="Label" parent="VBoxContainer/NombreRueda/HBoxContainer"]
+[node name="Label" type="Label" parent="Config/VBoxContainer/NombreRueda/HBoxContainer"]
 margin_left = 62.0
 margin_top = 5.0
 margin_right = 189.0
 margin_bottom = 19.0
 text = "Nombre de la rueda"
 
-[node name="guardar" type="Button" parent="VBoxContainer/NombreRueda/HBoxContainer"]
+[node name="guardar" type="Button" parent="Config/VBoxContainer/NombreRueda/HBoxContainer"]
 visible = false
 margin_left = 193.0
 margin_right = 255.0
 margin_bottom = 24.0
 text = "Guardar"
 
-[node name="HorasDia" type="PanelContainer" parent="VBoxContainer"]
+[node name="HorasDia" type="PanelContainer" parent="Config/VBoxContainer"]
+editor/display_folded = true
 margin_top = 80.0
-margin_right = 247.0
+margin_right = 246.0
 margin_bottom = 118.0
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HorasDia"]
+[node name="Panel" type="Panel" parent="Config/VBoxContainer/HorasDia"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 240.0
+margin_right = 239.0
 margin_bottom = 31.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HorasDia"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Config/VBoxContainer/HorasDia"]
+editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 240.0
+margin_right = 239.0
 margin_bottom = 31.0
 
-[node name="Nº horasDia" type="LineEdit" parent="VBoxContainer/HorasDia/HBoxContainer"]
+[node name="Nº horasDia" type="LineEdit" parent="Config/VBoxContainer/HorasDia/HBoxContainer"]
 margin_right = 58.0
 margin_bottom = 24.0
 
-[node name="Label" type="Label" parent="VBoxContainer/HorasDia/HBoxContainer"]
+[node name="Label" type="Label" parent="Config/VBoxContainer/HorasDia/HBoxContainer"]
 margin_left = 62.0
 margin_top = 5.0
 margin_right = 184.0
 margin_bottom = 19.0
 text = "Nº de horas por dia"
 
-[node name="ButtonHorasDia" type="Button" parent="VBoxContainer/HorasDia/HBoxContainer"]
+[node name="ButtonHorasDia" type="Button" parent="Config/VBoxContainer/HorasDia/HBoxContainer"]
 visible = false
 margin_left = 188.0
 margin_right = 250.0
 margin_bottom = 24.0
 text = "Guardar"
 
-[node name="LimiteHoras" type="PanelContainer" parent="VBoxContainer"]
+[node name="LimiteHoras" type="PanelContainer" parent="Config/VBoxContainer"]
+editor/display_folded = true
 visible = false
 margin_top = 122.0
 margin_right = 269.0
 margin_bottom = 167.0
 
-[node name="Panel" type="Panel" parent="VBoxContainer/LimiteHoras"]
+[node name="Panel" type="Panel" parent="Config/VBoxContainer/LimiteHoras"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 262.0
 margin_bottom = 38.0
 
-[node name="Mensaje ERROR" type="Label" parent="VBoxContainer/LimiteHoras"]
+[node name="Mensaje ERROR" type="Label" parent="Config/VBoxContainer/LimiteHoras"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 262.0
@@ -120,86 +129,89 @@ margin_bottom = 38.0
 text = "--¡¡No puede haber mas de 24 horas al dia!!--"
 autowrap = true
 
-[node name="NuevoUsuario" type="PanelContainer" parent="VBoxContainer"]
+[node name="NuevoUsuario" type="PanelContainer" parent="Config/VBoxContainer"]
+editor/display_folded = true
 margin_top = 122.0
-margin_right = 247.0
+margin_right = 246.0
 margin_bottom = 160.0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/NuevoUsuario"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Config/VBoxContainer/NuevoUsuario"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 240.0
+margin_right = 239.0
 margin_bottom = 31.0
 
-[node name="NuevoUsuario" type="Button" parent="VBoxContainer/NuevoUsuario/HBoxContainer2"]
+[node name="NuevoUsuario" type="Button" parent="Config/VBoxContainer/NuevoUsuario/HBoxContainer2"]
 margin_right = 104.0
 margin_bottom = 24.0
 text = "Nuevo usuario"
 
-[node name="nombreUser" type="LineEdit" parent="VBoxContainer/NuevoUsuario/HBoxContainer2"]
+[node name="nombreUser" type="LineEdit" parent="Config/VBoxContainer/NuevoUsuario/HBoxContainer2"]
 margin_left = 108.0
 margin_right = 166.0
 margin_bottom = 24.0
 
-[node name="GuardarNuevoUser" type="Button" parent="VBoxContainer/NuevoUsuario/HBoxContainer2"]
+[node name="GuardarNuevoUser" type="Button" parent="Config/VBoxContainer/NuevoUsuario/HBoxContainer2"]
 margin_left = 170.0
 margin_right = 232.0
 margin_bottom = 24.0
 text = "Guardar"
 
-[node name="Error" type="PanelContainer" parent="VBoxContainer"]
+[node name="Error" type="PanelContainer" parent="Config/VBoxContainer"]
+editor/display_folded = true
 visible = false
 margin_top = 122.0
 margin_right = 247.0
 margin_bottom = 150.0
 
-[node name="Panel" type="Panel" parent="VBoxContainer/Error"]
+[node name="Panel" type="Panel" parent="Config/VBoxContainer/Error"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 240.0
 margin_bottom = 21.0
 
-[node name="Mensaje ERROR" type="Label" parent="VBoxContainer/Error"]
+[node name="Mensaje ERROR" type="Label" parent="Config/VBoxContainer/Error"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 240.0
 margin_bottom = 21.0
 text = "--¡¡Se necesita un numero entero!!!--"
 
-[node name="NumUsuarios" type="PanelContainer" parent="VBoxContainer"]
+[node name="NumUsuarios" type="PanelContainer" parent="Config/VBoxContainer"]
 editor/display_folded = true
 margin_top = 164.0
-margin_right = 247.0
+margin_right = 246.0
 margin_bottom = 192.0
 
-[node name="Panel" type="Panel" parent="VBoxContainer/NumUsuarios"]
+[node name="Panel" type="Panel" parent="Config/VBoxContainer/NumUsuarios"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 240.0
+margin_right = 239.0
 margin_bottom = 21.0
 
-[node name="NumeroUsuarios" type="Label" parent="VBoxContainer/NumUsuarios"]
+[node name="NumeroUsuarios" type="Label" parent="Config/VBoxContainer/NumUsuarios"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 240.0
+margin_right = 239.0
 margin_bottom = 21.0
 
-[node name="Usuarios" type="Control" parent="VBoxContainer"]
+[node name="Usuarios" type="Control" parent="Config/VBoxContainer"]
+editor/display_folded = true
 margin_top = 196.0
-margin_right = 247.0
+margin_right = 246.0
 margin_bottom = 196.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Usuarios"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Config/VBoxContainer/Usuarios"]
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Usuarios/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Config/VBoxContainer/Usuarios/VBoxContainer"]
 margin_right = 40.0
-[connection signal="pressed" from="VBoxContainer/PanelMenuPrincipal/ButtonMenuprincipal" to="." method="_on_ButtonMenuprincipal_pressed"]
-[connection signal="text_changed" from="VBoxContainer/NombreRueda/HBoxContainer/NombreRueda" to="." method="_on_NombreRueda_text_changed"]
-[connection signal="pressed" from="VBoxContainer/NombreRueda/HBoxContainer/guardar" to="." method="_on_guardar_pressed"]
-[connection signal="text_changed" from="VBoxContainer/HorasDia/HBoxContainer/Nº horasDia" to="." method="_on_N_horasDia_text_changed"]
-[connection signal="pressed" from="VBoxContainer/HorasDia/HBoxContainer/ButtonHorasDia" to="." method="_on_ButtonHorasDia_pressed"]
-[connection signal="text_changed" from="VBoxContainer/NuevoUsuario/HBoxContainer2/nombreUser" to="." method="_on_nombreUser_text_changed"]
-[connection signal="text_entered" from="VBoxContainer/NuevoUsuario/HBoxContainer2/nombreUser" to="." method="_on_nombreUser_text_entered"]
-[connection signal="pressed" from="VBoxContainer/NuevoUsuario/HBoxContainer2/GuardarNuevoUser" to="." method="_on_GuardarNuevoUser_pressed"]
+[connection signal="pressed" from="Config/VBoxContainer/PanelMenuPrincipal/ButtonMenuprincipal" to="." method="_on_ButtonMenuprincipal_pressed"]
+[connection signal="text_changed" from="Config/VBoxContainer/NombreRueda/HBoxContainer/NombreRueda" to="." method="_on_NombreRueda_text_changed"]
+[connection signal="pressed" from="Config/VBoxContainer/NombreRueda/HBoxContainer/guardar" to="." method="_on_guardar_pressed"]
+[connection signal="text_changed" from="Config/VBoxContainer/HorasDia/HBoxContainer/Nº horasDia" to="." method="_on_N_horasDia_text_changed"]
+[connection signal="pressed" from="Config/VBoxContainer/HorasDia/HBoxContainer/ButtonHorasDia" to="." method="_on_ButtonHorasDia_pressed"]
+[connection signal="text_changed" from="Config/VBoxContainer/NuevoUsuario/HBoxContainer2/nombreUser" to="." method="_on_nombreUser_text_changed"]
+[connection signal="text_entered" from="Config/VBoxContainer/NuevoUsuario/HBoxContainer2/nombreUser" to="." method="_on_nombreUser_text_entered"]
+[connection signal="pressed" from="Config/VBoxContainer/NuevoUsuario/HBoxContainer2/GuardarNuevoUser" to="." method="_on_GuardarNuevoUser_pressed"]
