@@ -2,6 +2,7 @@ extends Control
 
 onready var horas = Global.numHoras
 onready var nombre = Global.nombreUser
+onready var cuadrante = get_node("/root/Configuracion/Config/Cuadrante")
 var horaSalida = load("res://Configuracion/configuracion de usuario/Hora de salida/Hora de salida.tscn")
 var horaEntrada = load("res://Configuracion/configuracion de usuario/Hora de entrada/Hora de entrada.tscn")
 
@@ -110,4 +111,5 @@ func _on_Guardar_pressed():
 	Global.llenaJuevesSalida(Global.nombreUser , Global.salidaJ)
 	Global.llenaViernesEntrada(Global.nombreUser , Global.entradaV)
 	Global.llenaViernesSalida(Global.nombreUser , Global.salidaV)
+	cuadrante.llenaTablaConUser()
 	pass 
