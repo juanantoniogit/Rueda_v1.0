@@ -14,6 +14,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="ColHorario" type="VBoxContainer" parent="HBoxContainer"]
+editor/display_folded = true
 margin_right = 14.0
 margin_bottom = 40.0
 
@@ -39,6 +40,7 @@ margin_right = 67.0
 margin_bottom = 40.0
 
 [node name="Dia" parent="HBoxContainer/Lunes" instance=ExtResource( 2 )]
+editor/display_folded = true
 margin_right = 49.0
 margin_bottom = 28.0
 
@@ -49,6 +51,7 @@ margin_right = 42.0
 margin_right = 42.0
 
 [node name="usuario" parent="HBoxContainer/Lunes/Dia/VBoxContainer" index="0" instance=ExtResource( 3 )]
+editor/display_folded = true
 margin_right = 35.0
 
 [node name="nombre usuario" parent="HBoxContainer/Lunes/Dia/VBoxContainer/usuario" index="0"]
@@ -56,6 +59,7 @@ margin_right = 35.0
 text = "lunes"
 
 [node name="Martes" type="VBoxContainer" parent="HBoxContainer"]
+editor/display_folded = true
 margin_left = 71.0
 margin_right = 130.0
 margin_bottom = 40.0
