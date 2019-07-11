@@ -111,5 +111,8 @@ func _on_Guardar_pressed():
 	Global.llenaJuevesSalida(Global.nombreUser , Global.salidaJ)
 	Global.llenaViernesEntrada(Global.nombreUser , Global.entradaV)
 	Global.llenaViernesSalida(Global.nombreUser , Global.salidaV)
-	cuadrante.llenaTablaConUser()
+	#________Toma el nombre del usuario a guardar
+	var nombre = get_parent().get_node("Boton de usuario").get_child(0).name
+#	print ("nombre boton pulsado: " + str(nombre))
+	cuadrante.llenaTablaConUser(nombre)
 	pass 
