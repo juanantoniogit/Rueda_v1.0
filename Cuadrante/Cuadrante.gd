@@ -24,10 +24,11 @@ func horas(horas , dia):
 #	__________Añade nueva hora a la columna Lunes
 	var escenaHora = preEscenaHora.instance()
 	var horario = get_node("GridContainer/")
-	print (horario.name)
 	horario.add_child(escenaHora)
 	var newHora = horario.get_child(1 + horas)
-	newHora.set_name("hora0"  + str(horas + 1))
+	print (newHora.name)
+	print (str(diasSemana[dia]) + ": " + str(horas) )
+	newHora.set_name(str(diasSemana[dia]) + ": " + str(horas) )
 #______________________Ubica a cada usuario en la tabla 
 func llenaTablaConUser(nombre):
 	quitaUserEnHora(nombre)
