@@ -25,55 +25,57 @@ func horas(horas , dia):
 	var escenaHora = preEscenaHora.instance()
 	var horario = get_node("GridContainer/")
 	horario.add_child(escenaHora)
-	var newHora = horario.get_child(1 + horas)
-	print (newHora.name)
-	print (str(diasSemana[dia]) + ": " + str(horas) )
-	newHora.set_name(str(diasSemana[dia]) + ": " + str(horas) )
+	var newHora = horario.get_child(horas)
+	print ("Nombre nueva hora: "+str(newHora.name))
+	print (str(diasSemana[dia]) + ": "+ str(horas + 1))
+#	print (str(diasSemana[dia]) + ": " + str(horas) )
+#	newHora.set_name(str(diasSemana[dia]) + ": "+ str(horas + 1))
 #______________________Ubica a cada usuario en la tabla 
-func llenaTablaConUser(nombre):
-	quitaUserEnHora(nombre)
+#func llenaTablaConUser(nombre):
+#	quitaUserEnHora(nombre)
 
 #_________________________Quita al usuario de otras horas. Si estubiera
-func quitaUserEnHora(nombre):
-	var numHoras = int(Global.numHoras) 
-	for i in numHoras:
-		var horas = "HBoxContainer/Lunes/hora0" + str(int(i) + 1) + "/VBoxContainer/"
-		var userPorHora = get_node(horas).get_child_count()
-#		print ("numero usuarios en la hora " + str(int(i) + 1) + ": " + str(userPorHora))
-		if userPorHora >= 1:
-			for i in userPorHora:
-				var userNamePorHora = get_node(horas).get_child(i).name
-				var labelUserPorHora = get_node(str(horas) + str(userNamePorHora) + "/nombre usuario" )
-#				print("hora: " + str(i))
-#				print ("nombre usuario" + str(i) + ": " + str(userNamePorHora))
-				if userNamePorHora == nombre:
-					print("userNamePorHora == nombre")
-					var rutaUsusarioExistente = str(horas) + str(nombre)
-#					print ("ruta usuario existente: " + str(rutaUsusarioExistente))
-					get_node(rutaUsusarioExistente).queue_free()
-					
-				if labelUserPorHora.get_text() == nombre:
-					labelUserPorHora.get_parent().queue_free()
-					print("Etiqueta == nombre")
-					
-				var regex = RegEx.new()
-				regex.compile("^[a]+$")
-				var result = regex.search(userNamePorHora)
-				print( "result: " + str(result))
-				print( "nombre usuario por hora: " + str(userNamePorHora))
-				if result == null:
-					print("resultado nulo ??")
-				else:
-					print("resultado: " + str(result))
-					pass
-			
-			
-	ponUserEnHora(nombre)
+#func quitaUserEnHora(nombre):
+#	var numHoras = int(Global.numHoras) 
+#	for i in numHoras:
+#		var horas = "HBoxContainer/Lunes/hora0" + str(int(i) + 1) + "/VBoxContainer/"
+#		var userPorHora = get_node(horas).get_child_count()
+##		print ("numero usuarios en la hora " + str(int(i) + 1) + ": " + str(userPorHora))
+#		if userPorHora >= 1:
+#			for i in userPorHora:
+#				var userNamePorHora = get_node(horas).get_child(i).name
+#				var labelUserPorHora = get_node(str(horas) + str(userNamePorHora) + "/nombre usuario" )
+##				print("hora: " + str(i))
+##				print ("nombre usuario" + str(i) + ": " + str(userNamePorHora))
+#				if userNamePorHora == nombre:
+#					print("userNamePorHora == nombre")
+#					var rutaUsusarioExistente = str(horas) + str(nombre)
+##					print ("ruta usuario existente: " + str(rutaUsusarioExistente))
+#					get_node(rutaUsusarioExistente).queue_free()
+#
+#				if labelUserPorHora.get_text() == nombre:
+#					labelUserPorHora.get_parent().queue_free()
+#					print("Etiqueta == nombre")
+#
+#				var regex = RegEx.new()
+#				regex.compile("^[a]+$")
+#				var result = regex.search(userNamePorHora)
+#				print( "result: " + str(result))
+#				print( "nombre usuario por hora: " + str(userNamePorHora))
+#				if result == null:
+#					print("resultado nulo ??")
+#				else:
+#					print("resultado: " + str(result))
+#					pass
+#
+#
+#	ponUserEnHora(nombre)
 
 #___________________________Coloca al usuario en la hora.
-func ponUserEnHora(nombre):
+func llenaTablaConUser(nombre):
 	var numHora = Global.LunesEntrada[nombre]
-	var horaSelec = "HBoxContainer/Lunes/hora0" + str(numHora) + "/VBoxContainer/"
+	var horaSelec = "GridContainer/Lunes/hora0" + str(numHora) + "/VBoxContainer/"
+	print (get_node("GridContainer/Lunes/hora0" + str(numHora)).name)
 	get_node(horaSelec).add_child(usuario.instance())
 	var newUser = str(horaSelec) + str(label)
 	get_node(newUser).set_text(str(nombre))
