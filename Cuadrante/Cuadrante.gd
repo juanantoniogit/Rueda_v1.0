@@ -16,20 +16,27 @@ func _nombreUser():
 #______________________Crea la tabla en funcion del nº de horas
 func numHoras():
 	var numHoras = int(Global.numHoras) 
-	for i in numHoras:
-		for a in len(diasSemana):
-			horas(i, a)
+	for a in len(diasSemana):
+		print("*****a dias semana: " + str(a))
+		for i in numHoras:
+			print("i_____numHoras: " + str(i))
+
+			horas(a, i)
 #	___________________Añade nueva hora a cada dia (ready)
-func horas(horas , dia):
+func horas(dia , horas):
 #	__________Añade nueva hora a la columna Lunes
 	var escenaHora = preEscenaHora.instance()
 	var horario = get_node("GridContainer/")
 	horario.add_child(escenaHora)
 	var newHora = horario.get_child(horas)
-	print ("Nombre nueva hora: "+str(newHora.name))
-	print (str(diasSemana[dia]) + ": "+ str(horas + 1))
+	
+	print ("Nombre nueva hora: " + str(newHora.name) + str(horas))
+	var nombreHora = str(diasSemana[dia]) + ": " + str(horas + 1) 
+#	print (nombreHora)
 #	print (str(diasSemana[dia]) + ": " + str(horas) )
-#	newHora.set_name(str(diasSemana[dia]) + ": "+ str(horas + 1))
+#	newHora.set_name(str(newHora.name))
+#	newHora.set_name(nombreHora)
+#	print (newHora.name)
 #______________________Ubica a cada usuario en la tabla 
 #func llenaTablaConUser(nombre):
 #	quitaUserEnHora(nombre)
@@ -72,15 +79,15 @@ func horas(horas , dia):
 #	ponUserEnHora(nombre)
 
 #___________________________Coloca al usuario en la hora.
-func llenaTablaConUser(nombre):
-	var numHora = Global.LunesEntrada[nombre]
-	var horaSelec = "GridContainer/Lunes/hora0" + str(numHora) + "/VBoxContainer/"
-	print (get_node("GridContainer/Lunes/hora0" + str(numHora)).name)
-	get_node(horaSelec).add_child(usuario.instance())
-	var newUser = str(horaSelec) + str(label)
-	get_node(newUser).set_text(str(nombre))
-	var nodoNombreUsuario = "HBoxContainer/Lunes/hora0" + str(numHora) + "/VBoxContainer/usuario"
-	get_node(nodoNombreUsuario).set_name(str(nombre))
+#func llenaTablaConUser(nombre):
+#	var numHora = Global.LunesEntrada[nombre]
+#	var horaSelec = "GridContainer/Lunes/hora0" + str(numHora) + "/VBoxContainer/"
+#	print (get_node("GridContainer/Lunes/hora0" + str(numHora)).name)
+#	get_node(horaSelec).add_child(usuario.instance())
+#	var newUser = str(horaSelec) + str(label)
+#	get_node(newUser).set_text(str(nombre))
+#	var nodoNombreUsuario = "HBoxContainer/Lunes/hora0" + str(numHora) + "/VBoxContainer/usuario"
+#	get_node(nodoNombreUsuario).set_name(str(nombre))
 
 			
 			
