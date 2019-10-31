@@ -16,25 +16,30 @@ func _nombreUser():
 #______________________Crea la tabla en funcion del nº de horas
 func numHoras():
 	var numHoras = int(Global.numHoras) 
-	for a in len(diasSemana):
-		print("*****a dias semana: " + str(a))
-		for i in numHoras:
-			print("i_____numHoras: " + str(i))
-
-			horas(a, i)
+	for i in numHoras + 1:
+		print("i_____numHoras: " + str(i))
+		for a in len(diasSemana):
+			print("*****a dias semana: " + str(a))
+			horas(i, a)
 #	___________________Añade nueva hora a cada dia (ready)
-func horas(dia , horas):
+func horas(horas, dia):
 #	__________Añade nueva hora a la columna Lunes
 	var escenaHora = preEscenaHora.instance()
 	var horario = get_node("GridContainer/")
 	horario.add_child(escenaHora)
-	var newHora = horario.get_child(horas)
-	
-	print ("Nombre nueva hora: " + str(newHora.name) + str(horas))
-	var nombreHora = str(diasSemana[dia]) + ": " + str(horas + 1) 
+	var newHora = horario.get_child(dia)
+	print (horario.get_child_count())
+	print (horario.get_child(horario.get_child_count()))
+	newHora.set_name(str(diasSemana[dia]) + ": " + str(horas))
+	var label = newHora.get_node("Label")
+	label.set_text(str(diasSemana[dia]) + ": " + str(horas))
+	print (newHora.name)
+#	print ("Nombre nueva hora: " + str(newHora.name) + str(horas))
+#	var nombreHora = str(diasSemana[dia]) + ": " + str(horas) 
 #	print (nombreHora)
 #	print (str(diasSemana[dia]) + ": " + str(horas) )
 #	newHora.set_name(str(newHora.name))
+#	print ("nombre nueva hora: " + str(newHora.name))
 #	newHora.set_name(nombreHora)
 #	print (newHora.name)
 #______________________Ubica a cada usuario en la tabla 
